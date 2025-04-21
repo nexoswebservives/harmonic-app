@@ -1,11 +1,7 @@
-
 import flet as ft
 from flet import Page, app
 from services.config import AppConfig
 from services.theory_service import MusicTheoryService
-import platform
-import os
-import subprocess
 
 def main(page: Page):
     config = AppConfig()
@@ -86,4 +82,8 @@ def main(page: Page):
     page.on_route_change = route_change
     page.go(page.route or "/")
 
-app(target=main)
+if __name__ == "__main__":
+
+if __name__ == "__main__":
+    import os
+    ft.app(target=main, port=int(os.getenv("PORT", 8000)), view=ft.WEB_BROWSER)
