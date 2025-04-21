@@ -1,4 +1,3 @@
-
 from .scale_generator import ScaleGenerator
 from .chord_generator import ChordGenerator
 
@@ -15,7 +14,6 @@ class MusicTheoryService:
             "formula": self.config.formulas.get(mode_type, []),
             "chords": self.chord_generator.get_chords_from_scale(scale, mode_type),
             "sevenths": self.chord_generator.get_7th_chords(scale, mode_type),
-            "triads": self.chord_generator.get_triads(scale)
         }
 
     def gerar_formacao_acordes(self, tonic):
@@ -27,11 +25,6 @@ class MusicTheoryService:
             f"{tonic} Maior": [intervalo(0), intervalo(4), intervalo(7)],
             f"{tonic} Menor": [intervalo(0), intervalo(3), intervalo(7)],
             f"{tonic} Diminuto": [intervalo(0), intervalo(3), intervalo(6)],
-            f"{tonic} Aumentado": [intervalo(0), intervalo(4), intervalo(8)],
-            f"{tonic}7": [intervalo(0), intervalo(4), intervalo(7), intervalo(10)],
-            f"{tonic}maj7": [intervalo(0), intervalo(4), intervalo(7), intervalo(11)],
-            f"{tonic}m7": [intervalo(0), intervalo(3), intervalo(7), intervalo(10)],
-            f"{tonic}dim7": [intervalo(0), intervalo(3), intervalo(6), intervalo(9)],
         }
 
     def gerar_campo_harmonico(self, tonic):

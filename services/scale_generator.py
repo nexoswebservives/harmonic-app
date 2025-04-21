@@ -1,17 +1,10 @@
-
 class ScaleGenerator:
     def __init__(self, config):
         self.config = config
 
     def generate_mode_scale(self, tonic, mode_type):
         formulas = {
-            "jónico": [2, 2, 1, 2, 2, 2, 1],
-            "dórico": [2, 1, 2, 2, 2, 1, 2],
-            "frígio": [1, 2, 2, 2, 1, 2, 2],
-            "lídio":  [2, 2, 2, 1, 2, 2, 1],
-            "mixolídio": [2, 2, 1, 2, 2, 1, 2],
-            "eólio": [2, 1, 2, 2, 1, 2, 2],
-            "lócrio": [1, 2, 2, 1, 2, 2, 2]
+            "jónico": [2, 2, 1, 2, 2, 2, 1]
         }
 
         steps = formulas.get(mode_type.lower())
