@@ -1,0 +1,14 @@
+{
+    "mode_formulas": {
+        "jónico": ["T", "2M", "3M", "4J", "5J", "6M", "7M"],
+        "dórico": ["T", "2M", "3m", "4J", "5J", "6M", "7m"]
+    },
+    "chord_qualities": {
+        "jónico": ["M", "m", "m", "M", "M", "m", "dim"],
+        "dórico": ["m", "m", "M", "M", "m", "dim", "M"]
+    },
+    "7th_chords": {
+        "jónico": ["maj7", "m7", "m7", "maj7", "7", "m7", "m7b5"],
+        "dórico": ["m7", "m7", "maj7", "7", "m7", "m7b5", "maj7"]
+    }
+}
