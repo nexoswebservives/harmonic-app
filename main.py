@@ -83,7 +83,5 @@ def main(page: Page):
     page.go(page.route or "/")
 
 if __name__ == "__main__":
-
-if __name__ == "__main__":
     import os
     ft.app(target=main, port=int(os.getenv("PORT", 8000)), view=ft.WEB_BROWSER)
