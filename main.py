@@ -24,59 +24,6 @@ def main(page: Page):
                 )
             )
 
-        elif page.route == "/formacao_acordes":
-            dropdown = ft.Dropdown(label="Selecione o Tom", options=[ft.dropdown.Option(n) for n in config.sharp_notes + config.flat_notes])
-            output = ft.Column()
-
-            def gerar_acordes(e):
-                nota = dropdown.value
-                if nota:
-                    acordes = service.gerar_formacao_acordes(nota)
-                    output.controls.clear()
-                    for nome, notas in acordes.items():
-                        output.controls.append(ft.Text(f"{nome}: {', '.join(notas)}"))
-                page.update()
-
-            page.views.append(
-                ft.View(
-                    "/formacao_acordes",
-                    controls=[
-                        ft.Text("🎹 Formação de Acordes", size=24, weight=ft.FontWeight.BOLD),
-                        dropdown,
-                        ft.ElevatedButton("Gerar Acordes", on_click=gerar_acordes),
-                        ft.ElevatedButton("🔙 Voltar", on_click=lambda _: page.go("/")),
-                        output
-                    ]
-                )
-            )
-
-        elif page.route == "/campo_harmonico":
-            dropdown = ft.Dropdown(label="Tônica", options=[ft.dropdown.Option(n) for n in config.sharp_notes + config.flat_notes])
-            output = ft.Column()
-
-            def gerar_campo(e):
-                nota = dropdown.value
-                if nota:
-                    campo = service.gerar_campo_harmonico(nota)
-                    output.controls.clear()
-                    output.controls.append(ft.Text(f"Escala: {', '.join(campo['escala'])}", weight=ft.FontWeight.BOLD))
-                    output.controls.append(ft.Text(f"Acordes: {', '.join(campo['acordes'])}"))
-                    output.controls.append(ft.Text(f"Acordes com 7ª: {', '.join(campo['acordes7'])}"))
-                page.update()
-
-            page.views.append(
-                ft.View(
-                    "/campo_harmonico",
-                    controls=[
-                        ft.Text("🎼 Campo Harmônico", size=24, weight=ft.FontWeight.BOLD),
-                        dropdown,
-                        ft.ElevatedButton("Gerar Campo Harmônico", on_click=gerar_campo),
-                        ft.ElevatedButton("🔙 Voltar", on_click=lambda _: page.go("/")),
-                        output
-                    ]
-                )
-            )
-
         page.update()
 
     page.on_route_change = route_change
