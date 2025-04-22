@@ -7,7 +7,7 @@ def main(page: ft.Page):
         if page.route == "/":
             page.views.append(
                 ft.View("/", controls=[
-                    ft.Text("✅ O Harmonic App está funcionando no Render!", size=24, weight=ft.FontWeight.BOLD),
+                    ft.Text("✅ Projeto Flet Web no Render funcionando perfeitamente!", size=24)
                 ])
             )
         page.update()
