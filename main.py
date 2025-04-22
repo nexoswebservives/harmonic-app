@@ -12,8 +12,12 @@ def main(page: ft.Page):
             )
         page.update()
 
+    page.window.manifest = "/web/manifest.json"
+    page.window.register_service_worker("/web/service-worker.js")
+    page.window.favicon = "/web/icons/icon-192.png"
+
     page.on_route_change = route_change
-    page.go(page.route or "/")
+    route_change(None)
 
 if __name__ == "__main__":
     ft.app(target=main, port=int(os.getenv("PORT", 8000)), view=ft.WEB_BROWSER)
