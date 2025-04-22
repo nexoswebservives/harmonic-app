@@ -10,17 +10,20 @@ class AppConfig:
     @property
     def formulas(self):
         return {
-            "jónico": ["T", "2M", "3M", "4J", "5J", "6M", "7M"]
+            "jónico": ["T", "2M", "3M", "4J", "5J", "6M", "7M"],
+            "dórico": ["T", "2M", "3m", "4J", "5J", "6M", "7m"]
         }
 
     @property
     def chord_qualities(self):
         return {
-            "jónico": ["M", "m", "m", "M", "M", "m", "dim"]
+            "jónico": ["M", "m", "m", "M", "M", "m", "dim"],
+            "dórico": ["m", "m", "M", "M", "m", "dim", "M"]
         }
 
     @property
     def seventh_qualities(self):
         return {
-            "jónico": ["maj7", "m7", "m7", "maj7", "7", "m7", "m7b5"]
+            "jónico": ["maj7", "m7", "m7", "maj7", "7", "m7", "m7b5"],
+            "dórico": ["m7", "m7", "maj7", "7", "m7", "m7b5", "maj7"]
         }

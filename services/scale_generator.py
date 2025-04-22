@@ -4,7 +4,8 @@ class ScaleGenerator:
 
     def generate_mode_scale(self, tonic, mode_type):
         formulas = {
-            "jónico": [2, 2, 1, 2, 2, 2, 1]
+            "jónico": [2, 2, 1, 2, 2, 2, 1],
+            "dórico": [2, 1, 2, 2, 2, 1, 2]
         }
 
         steps = formulas.get(mode_type.lower())
