@@ -1,0 +1,14 @@
+
+{
+  "name": "Harmonic App",
+  "short_name": "Harmonic",
+  "start_url": ".",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "description": "App para teoria musical harmônica",
+  "icons": [{
+    "src": "/web/icons/icon-192.png",
+    "type": "image/png",
+    "sizes": "192x192"
+  }]
+}
